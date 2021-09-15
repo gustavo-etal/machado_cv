@@ -1,27 +1,16 @@
 name: compile-pdf
-on: push
+on: [push]
 jobs:
-  build:
-    runs-on: ubuntu-20.04
-
+  build_latex:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        name: Tectonic Cache
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
         with:
-          path: ~/.cache/Tectonic
-          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
-          restore-keys: |
-            ${{ runner.os }}-tectonic-
-      - uses: wtfjoke/setup-tectonic@v1
+          root_file: doc1.tex
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run Tectonic
-        run: |
-          tectonic machado_cv.tex
-      - name: Upload pdf
-        uses: actions/upload-artifact@v2
-        with:
-          name: main
-          path: main.pdf
+          root_file: machado_cv.tex
