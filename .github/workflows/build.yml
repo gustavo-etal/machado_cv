@@ -9,6 +9,6 @@ jobs:
       - name: example-class-relations--svg
         uses: dante-ev/latex-action@latest
         with:
-          root_file: example-class-relations--svg.tex
+          root_file: machado_cv.tex
           compiler: lualatex
           args: -interaction=nonstopmode -shell-escape
