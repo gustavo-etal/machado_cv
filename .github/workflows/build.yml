@@ -1,6 +1,5 @@
 name: compile-pdf
 
-name: Test Github Action
 on:
   push:
   pull_request:
