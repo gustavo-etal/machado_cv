@@ -10,4 +10,5 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: machado_cv.tex
-          latexmk_use_lualatex: true
+          compiler: lualatex
+          args: -interaction=nonstopmode -shell-escape
