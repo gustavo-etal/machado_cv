@@ -1,17 +1,29 @@
 name: compile-pdf
-on: [push]
+
+on: push
+
 jobs:
-  build_latex:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-20.04
+
     steps:
-      - name: Set up Git repository
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: example-class-relations--svg
-        uses: dante-ev/latex-action@latest
+      - uses: actions/cache@v2
+        name: Tectonic Cache
         with:
-          root_file: machado_cv.tex
-          compiler: lualatex
-          args: -interaction=nonstopmode -shell-escape
-      - name: Check pdf files
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+      - uses: gustavo-etal/setup-tectonic@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Tectonic
         run: |
-          file test.pdf | grep -q ' PDF '
+          tectonic machado_cv.tex
+      - name: Upload pdf
+        uses: actions/upload-artifact@v2
+        with:
+          name: main
+          path: main.pdf
