@@ -12,3 +12,6 @@ jobs:
           root_file: machado_cv.tex
           compiler: lualatex
           args: -interaction=nonstopmode -shell-escape
+      - name: Check pdf files
+        run: |
+          file test.pdf | grep -q ' PDF '
