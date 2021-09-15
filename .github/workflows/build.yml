@@ -9,7 +9,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
-          root_file: doc1.tex
+          root_file: machado_cv.tex
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
