@@ -47,10 +47,6 @@ jobs:
       - name: List installed packages
         run: mamba list
 
-      - name: Compile the PDF
-        run: |
-          make
-          cp *.pdf 
       - name: Push to main
         if: success() && github.event_name == 'push'
         # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
