@@ -52,7 +52,6 @@ jobs:
       - name: Compile the PDF
         run: |
           make
-          mkdir output
           touch output/
           cp *.pdf output/
       - name: Push to main
