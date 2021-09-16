@@ -1,5 +1,4 @@
 name: cv-pdf
-
 on:
   pull_request:
   push:
