@@ -52,10 +52,12 @@ sorting=ydnt
 \newcommand{\Address}{
   1060 William Moore Drive, Raleigh NC 27607, USA
 }
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Metadata for the PDF output and control of hyperlinks
+\usepackage[hyphenbreaks]{breakurl}
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{
   pdftitle={\MyName\ - \Title},
@@ -67,7 +69,7 @@ sorting=ydnt
 }
 
 \usepackage{url} % Evitar enlaces en bibliografía largos & enlazar enlaces de bibliografía
-\usepackage{breakurl} % Broken links
+\usepackage[hyphenbreaks]{breakurl}
 \usepackage{etoolbox}
 
 % Template configuration
@@ -187,7 +189,7 @@ sorting=ydnt
 \renewcommand{\headrulewidth}{0pt}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
@@ -195,7 +197,7 @@ sorting=ydnt
 % No header for the first page
 \thispagestyle{empty}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % HEADER
 {\fontsize{22pt}{0}\selectfont\MyName}\\[-0.1cm]
 \rule{\textwidth}{0.2pt}
@@ -216,7 +218,7 @@ sorting=ydnt
   \end{flushright}
 \end{minipage}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Professional Appointments}
 
 \begin{EntriesTable}
@@ -231,7 +233,7 @@ sorting=ydnt
 \end{EntriesTable}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Education}
 
 \begin{EntriesTable}
@@ -245,7 +247,7 @@ sorting=ydnt
   \textbf{DVM Veterinary Medicine}, Universidade Federal de Santa Maria, Brazil.
 \end{EntriesTable}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Funding}
 Ongoing research support
 \begin{EntriesTable}
