@@ -3,15 +3,37 @@
 % Full Unicode support for non-ASCII characters
 \usepackage[utf8]{inputenc}
 
+% ======================================
+% Bibliography
+% ======================================
+\usepackage[utf8]{inputenc}
+
+\usepackage[
+backend=biber,
+maxbibnames=99,
+style=numeric,
+issn=false,
+sorting=ydnt
+%citestyle=numeric,
+]{biblatex}
+
+\addbibresource{citations.bib} %Import the bibliography file
+% Count total number of entries in each refsection
+\AtDataInput{%
+  \csnumgdef{entrycount:\therefsection}{%
+    \csuse{entrycount:\therefsection}+1}}
+
+% Print the labelnumber as the total number of entries in the
+% current refsection, minus the actual labelnumber, plus one
+\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+\newrobustcmd*{\mkbibdesc}[1]{%
+  \number\numexpr\csuse{entrycount:\therefsection}+1-#1}
+
 % Useful aliases
-\newcommand{\UERJ}{Universidade do Estado do Rio de Janeiro}
-\newcommand{\UHM}{University of Hawai`i at M\={a}noa}
 \newcommand{\NCSU}{North Carolina State University}
 \newcommand{\vet}{College of Veterinary Medicine}
 \newcommand{\UHEARTH}{Department of Earth Sciences}
 \newcommand{\CVM}{Department of Population Health and Pathobiology}
-\newcommand{\LIVENV}{School of Environmental Sciences}
-\newcommand{\LIV}{University of Liverpool}
 
 % Identifying information
 \newcommand{\Title}{Curriculum Vit\ae}
@@ -19,7 +41,7 @@
 \newcommand{\LastName}{Machado}
 \newcommand{\Initials}{}
 \newcommand{\MyName}{\FirstName\ \LastName}
-\newcommand{\Me}{\textbf{\LastName, \Initials}}  % For citations
+\newcommand{\Me}{\textbf{\LastName, \FirstName \Initials }}  % For citations
 \newcommand{\Email}{gmachad@ncsu.edu}
 \newcommand{\PersonalWebsite}{machado-lab.github.io}
 \newcommand{\LabWebsite}{machado-lab.github.io}
@@ -29,81 +51,16 @@
   1060 William Moore Drive, Raleigh NC 27607, USA
 }
 
+% Packages
+\usepackage{url} % Evitar enlaces en bibliografía largos & enlazar enlaces de bibliografía
+\usepackage{breakurl} % Broken links
+\usepackage{hyperref} % Evitar enlaces en bibliografía largos & enlazar enlaces de bibliografía
+\usepackage{etoolbox}
+
 % Names for citing coauthors
 \newcommand{\Val}{Barbosa, VCF}
 \newcommand{\Bi}{Oliveira Jr, VC}
 \newcommand{\Paul}{Wessel, P}
-\newcommand{\Joaquim}{Luis, J}
-\newcommand{\Remko}{Scharroo, R}
-\newcommand{\Florian}{Wobbe, F}
-\newcommand{\Walter}{Smith, WHF}
-\newcommand{\Dongdong}{Tian, D}
-\newcommand{\Bridget}{Smith-Konter, B}
-\newcommand{\Eric}{Xu, X}
-\newcommand{\David}{Sandwell, DT}
-\newcommand{\Carla}{Braitenberg, C}
-\newcommand{\Naomi}{Ussami, N}
-\newcommand{\Manoel}{D'Agrella-Filho, MS}
-\newcommand{\JB}{Silva, JBC}
-\newcommand{\Dai}{Sales, DP}
-\newcommand{\Figura}{Melo, FF}
-\newcommand{\Dio}{Carlos, DU}
-\newcommand{\BragaVale}{Braga, MA}
-\newcommand{\YLi}{Li, Y}
-\newcommand{\Angeli}{Angeli, G}
-\newcommand{\Peres}{Peres, G}
-\newcommand{\Everton}{Bomfim, EP}
-\newcommand{\Eder}{Molina, E}
-\newcommand{\Gomes}{Gomes, AAS}
-\newcommand{\Santiago}{Soler, SR}
-\newcommand{\Agustina}{Pesce, A}
-\newcommand{\Gimenez}{Gimenez, ME}
-\newcommand{\Kristoffer}{Hallam, KAT}
-\newcommand{\Guangdong}{Zhao, G}
-\newcommand{\Bo}{Chen, B}
-\newcommand{\JLiu}{Liu, J}
-\newcommand{\LChen}{Chen, L}
-\newcommand{\RGuo}{Guo, R}
-\newcommand{\MKaban}{Kaban, MK}
-\newcommand{\Lindsey}{Heagy, LJ}
-\newcommand{\Lion}{Krischer, L}
-\newcommand{\Rene}{Gassmoeller, R}
-\newcommand{\Bane}{Sullivan, CB}
-\newcommand{\Jens}{Klump, JF}
-\newcommand{\LBarba}{Barba, LA}
-\newcommand{\JBazan}{Bazan, J}
-\newcommand{\JBrown}{Brown, J}
-\newcommand{\RGuimera}{Guimera, RV}
-\newcommand{\MGymrek}{Gymrek, M}
-\newcommand{\AHanna}{Alex Hanna}
-\newcommand{\KHuff}{Huff, KD}
-\newcommand{\DKatz}{Katz, DS}
-\newcommand{\CMadan}{Madan, CR}
-\newcommand{\KMoerman}{Moerman, KM}
-\newcommand{\KNiemeyer}{Niemeyer, KE}
-\newcommand{\JPoulson}{Poulson, JL}
-\newcommand{\PPrins}{Prins, P}
-\newcommand{\KRam}{Ram, K}
-\newcommand{\ARokem}{Rokem, A}
-\newcommand{\Arfon}{Smith, AM}
-\newcommand{\GThiruvathukal}{Thiruvathukal, GK}
-\newcommand{\KThyng}{Thyng, KM}
-\newcommand{\BWilson}{Wilson, BE}
-\newcommand{\Yehudi}{Yehudi, Y}
-\newcommand{\Remi}{Rampin, R}
-\newcommand{\Hugo}{van Kemenade, H}
-\newcommand{\MattTurk}{Turk, M}
-\newcommand{\Shapero}{Shapero, D}
-\newcommand{\Anderson}{Banihirwe, A}
-\newcommand{\Leeman}{Leeman, J}
-\newcommand{\JEbbing}{Ebbing, J}
-\newcommand{\AGuy}{Guy, A}
-\newcommand{\JFarquharson}{Farquharson, J}
-\newcommand{\AKushnir}{Kushnir, A}
-\newcommand{\FWadsworth}{Wadsworth, F}
-\newcommand{\LPerozzi}{Perozzi, L}
-\newcommand{\MWieczorek}{Wieczorek, MA}
-
 
 % Template configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,7 +80,7 @@
 \newcommand{\SoftwareTitle}[1]{{\bfseries #1}}
 \newcommand{\TableTitle}[1]{{\fontsize{12pt}{0}\selectfont \itshape #1}}
 
-% For fancy and multipage tables
+% For fancy and multi page tables
 \usepackage{tabularx}
 \usepackage{ltablex}
 
@@ -229,7 +186,7 @@
   linkcolor=blue,
   citecolor=blue,
   filecolor=black,
-  urlcolor=MidnightBlue
+ urlcolor=MidnightBlue
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -270,7 +227,7 @@
   \Duration{2016}{2017}  &
   \Appointment{Postdoctoral researcher}{Department of Veterinary Population Medicine }{College of Veterinary Medicine }{University of Minnesota, USA}
   \\
-  \Duration{2016} &
+  \Year{2016}  &
   \Appointment{Assistant Professor}{Departamento de Medicina Veterinaria Preventiva}{Faculdade de Medicina Veterinaria}{Universidade Federal do Rio Grande do Sul, Brazil}
 \end{EntriesTable}
 
@@ -280,301 +237,172 @@
 
 \begin{EntriesTable}
   \Duration{2013}{2016}  &
-  \textbf{PhD in Veterinary Epidemiology}, Universidade Federal do Rio Grande do Sul, Brazil
+  \textbf{PhD in Veterinary Epidemiology}, Universidade Federal do Rio Grande do Sul, Brazil.
   \\
   \Duration{2011}{2013}  &
-  \textbf{MVSc in Veterinary Epidemiology}, Universidade Federal do Rio Grande do Sul, Brazil
+  \textbf{MVSc in Veterinary Epidemiology}, Universidade Federal do Rio Grande do Sul, Brazil.
   \\
   \Duration{2003}{2010}  &
-  \textbf{DVM Veterinary Medicine}, Universidade Federal de Santa Maria, Brazil
+  \textbf{DVM Veterinary Medicine}, Universidade Federal de Santa Maria, Brazil.
 \end{EntriesTable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Funding}
 Active
 \begin{EntriesTable}
-  \Duration{2021}{2022}  &
-  \textbf{PI}: \Me
-  ``Combining standardized on-farm biosecurity plans with animal movement data in a user-friendly rapid access biosecurity management tool: a multi state study.''. \textbf {Funded by:}
-  Animal and Plant Health Inspection Service (USDA-APHIS)-National Animal Disease Preparedness and Response Program (NADPRP)``
-  \textit{Amount \$182,301}. Award ID: {1948602}.
+  \Duration{2022}{2024}  &
+  \textbf{PI}: \Me\
+  ``Advanced interpretable machine learning for on-farm swine biosecurity with social network models on pig movement data'' \textbf {Funded by:} Foundation for Food and Agriculture Research (FFAR)-New Innovator Fellowship``
+  \textit{Amount \$450,000}. Award ID: {TBD}.
   \\
-  \Year{2020}  &
-  Software Sustainability Institute Fellowship.
-  \textit{\LIV}.
-  More information:
-  \href{https://www.leouieda.com/research/ssi2020.html}{leouieda.com/research/ssi2020.html}
+  \Duration{2021}{2022}  &
+  \textbf{PI}: \Me\
+  ``Combining standardized on-farm biosecurity plans with animal movement data in a user-friendly rapid access biosecurity management tool: a multi state study'' \textbf {Funded by:}
+  Animal and Plant Health Inspection Service (USDA-APHIS)-National Animal Disease Preparedness and Response Program (NADPRP)``
+  \textit{Amount \$182,301}. Award ID: {APP-15216}.
+  \\
+  \Duration{2020}{2024}  &
+  \textbf{PI}: \Me\
+  ``Near-real time spatiotemporal resource allocation to improve swine health'' \textbf {Funded by:} USDA-AFRI Foundational and Applied Science``
+  \textit{Amount \$500,000}. Award ID: {20206702132462}.
+  \\
+  \Duration{2020}{2021}  &
+  \textbf{PI}: \Me\
+  ``Dynamic transmission modeling-the role of feed, feed ingredients in swine disease transmission'' \textbf {Funded by:} Fats and Proteins Research Foundation``
+  \textit{Amount \$76,000}. Award ID: {2021-0715}.
+  \\
+  \Duration{2021}{2022}  &
+  \textbf{PI}: \Me\
+  ``Dynamic transmission modeling-the role of feed, feed ingredients in swine disease transmission'' \textbf {Funded by:} FUNDESA-Fundo de Desenvolvimento e Defesa Animal``
+  \textit{Amount \$114,000}. Award ID: {2021-0715}.
+  \\
+  \Year{2021}  &
+  \textbf{PI}: \Me\
+  ``Foot and mouth disease in Brazil-cattle, swine, small ruminants and poultry (Aya Omar-DVM Student)'' \textbf {Funded by:} Triangle Community Foundation``
+  \textit{Amount \$5,000}. Award ID: {3425}.
+  \\
+  \Duration{2019}{2022}  &
+  \textbf{PI}: \Me\
+  ``Assessing biosecurity vulnerabilities to predict the risk of new Porcine Reproductive and Respiratory Syndrome outbreaks'' \textbf {Funded by:} USDA-AFRI Foundational and Applied Science``
+  \textit{Amount \$300,000}. Award ID: {20196800829910}.
+\end{EntriesTable}
+Completed
+\begin{EntriesTable}
+  \Duration{2019}{2020} &
+  \textbf{PI}: \Me\
+  ``High-resolution dynamic risk mapping to guide timely disease interventions- Swine health information center'' \textbf {Funded by:} SHIC-Swine Health Information 
+  \textit{Amount \$89,987}. Award ID: {17-141}.
   \\
   \Duration{2019}{2020}  &
-  ESRG Research Support:
-  ``Geophysical inversion of GRACE satellite time-lapse gravity''.
-  Internal fund to support the research visit of PhD student Santiago R.
-  Soler.
-  \textit{\LIV}.
+  \textbf{PI}: \Me\
+  ``Network analysis to guide active surveillance'' \textbf {Funded by:} FUNDESA-Fundo de Desenvolvimento e Defesa Animal``
+  \textit{Amount \$22,696}. Award ID: {2019-049}.
+ \\
+  \Duration{2019}{2020}  &
+  {PI}: Linhares, \textbf{Co-PI} \Me\
+  ``Biosecurity screening tool to identify breeding herds’ risk to PRRS outbreak using a short survey Swine health information center'' \textbf {Funded by:} SHIC-Swine Health Information Center``
+  \textit{Amount \$75,201}. Award ID: {2019-2601}.
   \\
-  \Duration{2018}{2020}  &
-  NSF-EAR: ``The EarthScope/GMT Analysis and Visualization Toolbox''.
-  PI: \Paul, \textbf{co-PI}: \Me, co-PI: \Bridget.
-  \textit{\UHM}.
-  Award ID: \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1829371}{1829371}.
+  \Duration{2019}{2020}  &
+  {PI}: Goss, \textbf{Co-PI} \Me\
+  ``Distribution and activity of Pythium insidiosum in the Chincoteague National Wildlife Refuge'' \textbf {Funded by:} U.S. Fish and Wildlife Service``
+  \textit{Amount \$11,292}. Award ID: {2019-2012}.
   \\
-  \Duration{2014}{2018}  &
-  QUALITEC/UERJ Grant for training a technician for the Laboratory of
-  Exploration Geophysics - \UERJ
+ \Duration{2018}{2020}  &
+  \textbf{PI}: VanderWall, \textbf{Co-PI} \Me\
+  ``Forecasting the spread of endemic viruses of swine in the United States'' \textbf {Funded by:} USDA-AFRI Foundational and Applied Science``
+  \textit{Amount \$300,000}. Award ID: {XX}.
+  \\
+  \Duration{2021}{2022}  &
+  \textbf{PI}: \Me\
+  ``Development of a machine-learning framework to identify risk factors for COVID-19 infection in swine caretakers and estimate the chances of new COVID-19 waves`` \textbf {Funded by:} Grant Competition (UGPN)``
+  \textit{Amount \$30,000}. Award ID: {14}.
+  \\
+    \Duration{2019}{2020}  &
+  \textbf{PI}: \Me\
+  ``Development of a dissemination platform for temporal, spatial and phylogenetic analysis of Avian Infectious Bronchitis Virus sequences`` \textbf {Funded by:} NCSU Research and Innovation Seed Funding Program``
+  \textit{Amount \$18,750}. Award ID: {2019-2366}.
+  \\
+ \Duration{2019}{2020}  &
+  \textbf{PI}: \Me\
+  ``Identification of key factors enabling PRRSv spatial distribution and the importance of new virus variant introduction on the incidence of PRRSv in North Carolina`` \textbf {Funded by:} NCSU College of Veterinary Medicine``
+  \textit{Amount \$25,000}. Award ID: {14}.
+  \\
+   \Duration{2019}{2020}  &
+  \textbf{PI}: \Me\
+  ``Use of swine movement information to improve risk-based surveillance`` \textbf {Funded by:} CVM- Global Health grant program``
+  \textit{Amount \$19,792}. Award ID: {14}.
+  \\
+  \Duration{2021}{2022}  &
+  \textbf{PI}: \Me\
+  ``Optimizing control interventions for Visceral Leishmaniasis in multiple settings`` \textbf {Funded by:} Grant Competition (UGPN)``
+  \textit{Amount \$30,000}. Award ID: {14}.
 \end{EntriesTable}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Awards \& Honors}
 
 \begin{EntriesTable}
-  \Year{2017}  &
-  Brazilian Geophysical Society (SBGf) Award for \textbf{Best PhD Thesis}
-  of 2015 -- 2017
+   \Duration{2021}{2024}  &
+  Foundation for Food and Agriculture Research (FFAR)-New Innovator Fellowship, \textit{Amount \$450,000.}
   \\
-  \Year{2016}  &
-  \UERJ, Brazil, School of Geology
-  \textbf{Teaching Award} given by the graduating class of 2016
+ \Duration{2013}{2016}  &
+  Brazilian Ministry of Education CAPES \textbf{Masters Research Scholarship, 3 years funding.}
   \\
-  \Duration{2011}{2015}  &
-  Brazilian Ministry of Education CAPES \textbf{PhD Research Scholarship}
+  \Duration{2011}{2013}  &
+  Brazilian Ministry of Education CAPES \textbf{Masters Research Scholarship, 3 years funding.}
   \\
-  \Year{2011}  &
-  SEG Near Surface Geophysics Section \textbf{Student Travel Grant} to
-  present at the SEG Annual Meeting, San Antornio, TX, USA
+  \Duration{2006}{2007}  &
+ MAST International | MAST International at University of Minnesota (US) \textbf{International exchange student.}
   \\
-  \Year{2011}  &
-  EAGE \textbf{PACE Student Travel Grant} to present at the 73rd EAGE
-  Conference \& Exhibition, Vienna, Austria
-  \\
-  \Duration{2010}{2011}  &
-  Brazilian Ministry of Education CAPES \textbf{Masters Research Scholarship}
-  \\
-  \Year{2008}  &
-  Brazilian Geophysical Society (SBGf) \textbf{Undergraduate Research
-  Scholarship}
-  \\
-  \Year{2005}  &
-  São Paulo Research Foundation (FAPESP) \textbf{Undergraduate Research
-  Scholarship}
+  \Duration{2009}{2011}  &
+  Brazilian Ministry of Education CAPES \textbf{DVM Research
+  Scholarship.}
 \end{EntriesTable}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======================================
+% PUBLICATIONS
+% ======================================
+
 \section{Publications}
 
-\subsection{Preprints}
-
-\begin{EntriesTable}
-\Year{2019}  &
-  \OA
-  \LBarba, \JBazan, \JBrown, \RGuimera, \MGymrek, \AHanna, \Lindsey, \KHuff, \DKatz,
-  \CMadan, \KMoerman, \KNiemeyer, \JPoulson, \PPrins, \KRam, \ARokem, \Arfon,
-  \GThiruvathukal, \KThyng, \Me, \BWilson, \Yehudi.
-  Giving software its due through community-driven review and publication.
-  \emph{OSF Preprints}.
-  \DOI{10.31219/osf.io/f4vx6}
-\end{EntriesTable}
-
-\subsection{Papers}
-
+\subsection{Preprint}
 \begin{EntriesTable}
 \Year{2021}  &
-  \Santiago, \Me.
-  Gradient-boosted equivalent sources.
-  \emph{Geophysical Journal International}.
-  \DOI{10.1093/gji/ggab297}.
-  \Preprint{10.31223/X58G7C}
-  \GitHub{compgeolab/eql-gradient-boosted}
+  Cardenas, Nicolas C, Sykes, Abagael L, Lopes, Francisco PN, \Me.\
+  Multiplespecies animal movements: network properties, disease dynamic and the impact of targeted controlactions.
+  \emph{arXiv}.
+  \Preprint{arXiv:2107.10108 }
+  %\GitHub{}
   \\
-\Year{2020}  &
-  \OA
-  \Me, \Santiago, \Remi, \Hugo, \MattTurk, \Shapero, \Anderson, \Leeman.
-  Pooch: A friend to fetch your data files.
-  \emph{Journal of Open Source Software}.
-  \DOI{10.21105/joss.01943}.
-  \GitHub{fatiando/pooch}
+\Year{2021}  &
+  Sykes, Abagael L, Silva, Gustavo S, Holtkamp, Derald J, Mauch, Broc W, Osemeke, Onyekachukwu, Linhares, Daniel CL, \Me.\
+  Interpretable machine learning applied to on-farm biosecurity and porcine reproductive and respiratory syndrome virus.
+  \emph{arXiv}.
+  \Preprint{arXiv:2107.10108(2021)}
+  \GitHub{https://nfj1380.github.io/mrIML/}
   \\
-\Year{2019}  &
-  \OA
-  \Paul, \Joaquim, \Me, \Remko, \Florian, \Walter, \Dongdong.
-  The Generic Mapping Tools, Version 6.
-  \emph{Geochemistry, Geophysics, Geosystems}.
-  \DOI{10.1029/2019GC008515}.
+\Year{2021}  &
+  Galvis, Jason A, Corzo, Cesar, \Me.\
+  Modelling porcine reproductive and respiratory syndrome virus dynamics to quantify the contribution of multiple modes of transmission: between-farm animal and vehicle movements, farm-to-farm proximity, feed ingredients, and re-break.
+  \emph{bioRxiv}.
+  \Preprint{10.1101/2021.07.26.453902)}
+  %\GitHub{}
   \\
-  ~ &
-  \Santiago, \Agustina, \Gimenez, \Me.
-  Gravitational field calculation in spherical coordinates using variable densities in
-  depth.
-  \emph{Geophysical Journal International}.
-  \DOI{10.1093/gji/ggz277}.
-  \Preprint{10.31223/osf.io/3548g}
-  \GitHub{pinga-lab/tesseroid-variable-density}
-  \\
-  ~ &
-  \Guangdong, \Bo, \Me, \JLiu, \MKaban, \LChen, \RGuo.
-  Efficient 3D large-scale forward-modeling and inversion of gravitational fields in
-  spherical coordinates with application to lunar mascons.
-  \emph{Journal of Geophysical Research: Solid Earth}.
-  \DOI{10.1029/2019jb017691}.
-  \Preprint{10.31223/osf.io/dzf9j}
-  \\
-\Year{2018}  &
-  \OA
-  \Me. Verde: Processing and gridding spatial data using Green's functions.
-  \emph{Journal of Open Source Software}.
-  \DOI{10.21105/joss.00957}.
-  \GitHub{fatiando/verde}
-  \\
-\Year{2017}  &
-  \Me, \Val.
-  Fast non-linear gravity inversion in spherical coordinates with application
-  to the South American Moho,
-  \emph{Geophysical Journal International},
-  \DOI{10.1093/gji/ggw390}.
-  \Preprint{10.31223/osf.io/9ba4m}
-  \GitHub{pinga-lab/paper-moho-inversion-tesseroids}
-  \\
-\Year{2016}  &
-  \Me, \Val, \Carla.
-  Tesseroids: forward modeling gravitational fields in spherical coordinates,
-  \emph{Geophysics},
-  \DOI{10.1190/geo2015-0204.1}.
-  \GitHub{pinga-lab/paper-tesseroids}
-  \\
-  ~ &
-  \Dio, \Me, \Val.
-  How two gravity-gradient inversion methods can be used to reveal different
-  geologic features of ore deposit - A case study from the Quadrilátero
-  Ferrífero (Brazil),
-  \emph{Journal of Applied Geophysics},
-  \DOI{10.1016/j.jappgeo.2016.04.011}.
-  \\
-\Year{2015}  &
-  \OA
-  \Bi, \Dai, \Val, \Me.
-  Estimation of the total magnetization direction of approximately spherical
-  bodies,
-  \emph{Nonlinear Processes in Geophysics},
-  \DOI{10.5194/npg-22-215-2015}.
-  \GitHub{pinga-lab/Total-magnetization-of-spherical-bodies}
-  \\
-\Year{2014}  &
-  \Dio, \Me, \Val.
-  Imaging iron ore from the Quadrilátero Ferrífero (Brazil) using geophysical
-  inversion and drill hole data,
-  \emph{Ore Geology Reviews},
-  \DOI{10.1016/j.oregeorev.2014.02.011}.
-  \\
-\Year{2013}  &
-  \Figura, \Val, \Me, \Bi, \JB.
-  Estimating the nature and the horizontal and vertical positions of 3D
-  magnetic sources using Euler deconvolution,
-  \emph{Geophysics},
-  \DOI{10.1190/geo2012-0515.1}.
-  \\
-  ~ &
-  \Bi, \Val, \Me.
-  Polynomial equivalent layer,
-  \emph{Geophysics},
-  \DOI{10.1190/geo2012-0196.1}.
-  \\
-\Year{2012}  &
-  \Me, \Val.
-  Robust 3D gravity gradient inversion by planting anomalous densities,
-  \emph{Geophysics},
-  \DOI{10.1190/geo2011-0388.1}.
-  \GitHub{pinga-lab/paper-planting-densities}
+\Year{2021}  &
+  \Me\, Farthing, Trevor, Andraud, Mathieu, Lopes, Lopes, Francisco PN, Lanzas, Cristina.
+  Modeling the role of mortality-based response triggers on the effectiveness of {African} swine fever control strategies.
+  \emph{bioRxiv}.
+  \Preprint{10.1101/2021.04.05.438400}
+  \GitHub{https://github.com/machado-lab/ASF_model}
+  
 \end{EntriesTable}
 
-
-\subsection{Conference proceedings (peer-reviewed)}
-
-\begin{EntriesTable}
-\Year{2014}  &
-  \Figura, \Val, \Me, \Bi, \JB.
-  A Single Euler Solution Per Anomaly,
-  \emph{76th EAGE Conference and Exhibition 2014},
-  \DOI{10.3997/2214-4609.20140891}.
-  \\
-\Year{2013}  &
-  \Me, \Bi, \Val.
-  Modeling the Earth with Fatiando a Terra,
-  \emph{Proceedings of the 12th Python in Science Conference}.
-  \DOI{10.25080/Majora-8b375195-010}.
-  \\
-\Year{2012}  &
-  \Me, \Val.
-  Use of the ``shape-of-anomaly'' data misfit in 3D inversion by planting
-  anomalous densities,
-  \emph{SEG Technical Program Expanded Abstracts},
-  \DOI{10.1190/segam2012-0383.1}.
-  \\
-  ~ &
-  \Dio, \Me, \YLi, \Val, \BragaVale, \Angeli, \Peres.
-  Iron ore interpretation using gravity-gradient inversions in the Carajás, Brazil.
-  \emph{SEG Technical Program Expanded Abstracts},
-  \DOI{10.1190/segam2012-0525.1}.
-  \\
-\Year{2011}  &
-  \Me, \Everton, \Carla, \Eder.
-  Optimal forward calculation method of the Marussi tensor due to a geologic
-  structure at GOCE height,
-  \emph{Proceedings of the 4th International GOCE User Workshop}.
-  \\
-  ~ &
-  \Me, \Val.
-  Robust 3D gravity gradient inversion by planting anomalous densities,
-  \emph{SEG Technical Program Expanded Abstracts},
-  \DOI{10.1190/1.3628201}.
-  \\
-  ~ &
-  \Me, \Val.
-  3D gravity inversion by planting anomalous densities.
-  \emph{12th International Congress of the Brazilian Geophysical Society},
-  \DOI{10.1190/sbgf2011-179}.
-  \\
-  ~ &
-  \Me, \Val.
-  3D gravity gradient inversion by planting density anomalies.
-  \emph{73th EAGE Conference and Exhibition incorporating SPE EUROPEC},
-  \DOI{10.3997/2214-4609.20149567}.
-  \\
-  ~ &
-  \Dio, \Me, \Val, \BragaVale, \Gomes.
-  In-depth imaging of an iron orebody from Quadrilatero Ferrifero using 3D
-  gravity gradient inversion,
-  \emph{SEG Technical Program Expanded Abstracts},
-  \DOI{10.1190/1.3628219}.
-  \\
-  ~ &
-  \Dio, \Val, \Me, \BragaVale.
-  Inversão de Dados de Aerogradiometria Gravimétrica 3D-FTG Aplicada a
-  Exploração Mineral na Região do Quadrilátero Ferrífero,
-  \emph{12th International Congress of the Brazilian Geophysical Society},
-  \DOI{10.1190/sbgf2011-243}.
-\end{EntriesTable}
-
-\subsection{Open Datasets}
-
-\begin{EntriesTable}
-\Year{2020}  &
-  \Me.
-  Ground gravity data compilation for Australia filtered by survey quality
-  and packaged in CF-compliant netCDF (derived from the
-  Geoscience Australia compilation by \href{https://doi.org/10.26186/5c1987fa17078}{Wynne (2018)}).
-  \DOI{10.6084/m9.figshare.13643837}
-  \GitHub{compgeolab/australia-gravity-data}
-  \\
-\Year{2017}  &
-  \Me, \Val.
-  A gravity-derived Moho model for South America: source code, data, and
-  model results from ``Fast non-linear gravity inversion in spherical
-  coordinates with application to the South American Moho''.
-  \DOI{10.6084/m9.figshare.3987267}
-  \GitHub{pinga-lab/paper-moho-inversion-tesseroids}
-\end{EntriesTable}
-
+%% cite all other papers
+\nocite{*}
+\printbibliography[title=PEER-REVIEWED]
 
 \subsection{Open-source Software}
 
@@ -1275,14 +1103,5 @@ Geophysical tutorials for the SEG publication \textit{The Leading Edge}:
   \\
   \Duration{2011}{2019} & Society of Exploration Geophysicists
 \end{EntriesTable}
-
-\section{Languages}
-
-\TablePad
-\begin{tabularx}{\textwidth}{@{}p{0.15\textwidth} p{0.85\textwidth}@{}}
-  Portuguese & Native
-  \\
-  English & IELTS: CEFR Level C2 (mastery or proficiency) obtained in 2019
-\end{tabularx}
 
 \end{document}
