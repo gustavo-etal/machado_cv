@@ -14,19 +14,23 @@ sorting=ydnt
 %citestyle=numeric,
 ]{biblatex}
 
+%% this will count the references and reverse the order
 \addbibresource{citations.bib} %Import the bibliography file
 % Count total number of entries in each refsection
 \AtDataInput{%
   \csnumgdef{entrycount:\therefsection}{%
     \csuse{entrycount:\therefsection}+1}}
 
-% Print the labelnumber as the total number of entries in the
-% current refsection, minus the actual labelnumber, plus one
+% Print the label number as the total number of entries in the current ref section, minus the actual labelnumber, plus one
 \DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
 \newrobustcmd*{\mkbibdesc}[1]{%
   \number\numexpr\csuse{entrycount:\therefsection}+1-#1}
 
-% Useful aliases
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Your information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Useful aliases for main subsessions
 \newcommand{\NCSU}{North Carolina State University}
 \newcommand{\vet}{College of Veterinary Medicine}
 \newcommand{\UHEARTH}{Department of Earth Sciences}
@@ -38,7 +42,8 @@ sorting=ydnt
 \newcommand{\LastName}{Machado}
 \newcommand{\Initials}{}
 \newcommand{\MyName}{\FirstName\ \LastName}
-\newcommand{\Me}{\textbf{\LastName, \FirstName \Initials }}  % For citations
+\newcommand{\Me}{\textbf{\LastName, \FirstName \Initials }} 
+% For citations
 \newcommand{\Email}{gmachad@ncsu.edu}
 \newcommand{\PersonalWebsite}{machado-lab.github.io}
 \newcommand{\LabWebsite}{machado-lab.github.io}
@@ -49,18 +54,24 @@ sorting=ydnt
 }
 
 % Packages
+
+% Metadata for the PDF output and control of hyperlinks
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+  pdftitle={\MyName\ - \Title},
+  pdfauthor={\MyName},
+  linkcolor=blue,
+  citecolor=blue,
+  filecolor=black,
+ urlcolor=MidnightBlue
+}
+
 \usepackage{url} % Evitar enlaces en bibliografía largos & enlazar enlaces de bibliografía
 \usepackage{breakurl} % Broken links
-\usepackage{hyperref} % Evitar enlaces en bibliografía largos & enlazar enlaces de bibliografía
 \usepackage{etoolbox}
 
-% Names for citing coauthors
-\newcommand{\Val}{Barbosa, VCF}
-\newcommand{\Bi}{Oliveira Jr, VC}
-\newcommand{\Paul}{Wessel, P}
-
 % Template configuration
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Disable hyphenation
 \usepackage[none]{hyphenat}
@@ -175,16 +186,7 @@ sorting=ydnt
 \rhead{\fontsize{10pt}{0}\selectfont \thepage/\pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 
-% Metadata for the PDF output and control of hyperlinks
-\usepackage[colorlinks=true]{hyperref}
-\hypersetup{
-  pdftitle={\MyName\ - \Title},
-  pdfauthor={\MyName},
-  linkcolor=blue,
-  citecolor=blue,
-  filecolor=black,
- urlcolor=MidnightBlue
-}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
