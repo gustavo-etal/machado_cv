@@ -2,7 +2,6 @@
 
 % Full Unicode support for non-ASCII characters
 \usepackage[utf8]{inputenc}
-
 % ======================================
 % Bibliography
 % ======================================
@@ -43,6 +42,7 @@ sorting=ydnt
 \newcommand{\Initials}{}
 \newcommand{\MyName}{\FirstName\ \LastName}
 \newcommand{\Me}{\textbf{\LastName, \FirstName \Initials }} 
+
 % For citations
 \newcommand{\Email}{gmachad@ncsu.edu}
 \newcommand{\PersonalWebsite}{machado-lab.github.io}
@@ -57,7 +57,6 @@ sorting=ydnt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Metadata for the PDF output and control of hyperlinks
-
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{
   pdftitle={\MyName\ - \Title},
@@ -67,7 +66,6 @@ sorting=ydnt
   filecolor=black,
  urlcolor=MidnightBlue
 }
-
 \usepackage[hyphenbreaks]{breakurl}
 \usepackage{url} % Evitar enlaces en bibliografía largos & enlazar enlaces de bibliografía
 \usepackage{etoolbox}
@@ -188,12 +186,9 @@ sorting=ydnt
 \rhead{\fontsize{10pt}{0}\selectfont \thepage/\pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{document}
-
 % No header for the first page
 \thispagestyle{empty}
 
@@ -246,7 +241,6 @@ sorting=ydnt
   \Duration{2003}{2010}  &
   \textbf{DVM Veterinary Medicine}, Universidade Federal de Santa Maria, Brazil.
 \end{EntriesTable}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Funding}
 Ongoing research support
@@ -276,6 +270,16 @@ Ongoing research support
   \textbf{PI}: \Me\
   ``Dynamic transmission modeling-the role of feed, feed ingredients in swine disease transmission'' \textbf {Funded by:} FUNDESA-Fundo de Desenvolvimento e Defesa Animal``
   \textit{Amount \$114,000}. Award ID: {2021-0715}.
+  \\
+    \Duration{2021}{2022}  &
+  \textbf{PI}: \Me\
+  ``Development of a machine-learning framework to identify risk factors for COVID-19 infection in swine caretakers and estimate the chances of new COVID-19 waves`` \textbf {Funded by:} Grant Competition (UGPN)``
+  \textit{Amount \$30,000}. Award ID: {14}.
+  \\
+    \Duration{2021}{2022}  &
+  \textbf{PI}: \Me\
+  ``Optimizing control interventions for Visceral Leishmaniasis in multiple settings`` \textbf {Funded by:} Grant Competition (UGPN)``
+  \textit{Amount \$30,000}. Award ID: {22}.
   \\
   \Year{2021}  &
   \textbf{PI}: \Me\
@@ -313,12 +317,7 @@ Completed research support
  \Duration{2018}{2020}  &
   \textbf{PI}: VanderWall, \textbf{Co-PI} \Me\
   ``Forecasting the spread of endemic viruses of swine in the United States'' \textbf {Funded by:} USDA-AFRI Foundational and Applied Science``
-  \textit{Amount \$300,000}. Award ID: {XX}.
-  \\
-  \Duration{2021}{2022}  &
-  \textbf{PI}: \Me\
-  ``Development of a machine-learning framework to identify risk factors for COVID-19 infection in swine caretakers and estimate the chances of new COVID-19 waves`` \textbf {Funded by:} Grant Competition (UGPN)``
-  \textit{Amount \$30,000}. Award ID: {14}.
+  \textit{Amount \$300,000}. Award ID: {2018-68008-27890}.
   \\
     \Duration{2019}{2020}  &
   \textbf{PI}: \Me\
@@ -334,14 +333,9 @@ Completed research support
   \textbf{PI}: \Me\
   ``Use of swine movement information to improve risk-based surveillance`` \textbf {Funded by:} CVM- Global Health grant program``
   \textit{Amount \$19,792}. Award ID: {14}.
-  \\
-  \Duration{2021}{2022}  &
-  \textbf{PI}: \Me\
-  ``Optimizing control interventions for Visceral Leishmaniasis in multiple settings`` \textbf {Funded by:} Grant Competition (UGPN)``
-  \textit{Amount \$30,000}. Award ID: {14}.
 \end{EntriesTable}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Awards \& Honors}
 
 \begin{EntriesTable}
@@ -363,7 +357,7 @@ Completed research support
 \end{EntriesTable}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ======================================
 % PUBLICATIONS
 % ======================================
@@ -399,12 +393,14 @@ Completed research support
   \emph{bioRxiv}.
   \Preprint{10.1101/2021.04.05.438400}
   \GitHub{https://github.com/machado-lab/ASF_model}
+  
 \end{EntriesTable}
 
 %% cite all other papers
 \nocite{*}
 \printbibliography[title=PEER-REVIEWED]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Open-source Software}
 
 \begin{EntriesTable}
@@ -424,74 +420,8 @@ Completed research support
   \Website{machado-lab.github.io}
 \end{EntriesTable}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Teaching}
 
-\subsection{DVM-level}
-
-\begin{EntriesTable}
-  \Duration{2021}{\Ongoing}  &
-  VMP 971 Food Animal Diagnostics for Disease Diagnosis, Control, and Population Surveillance.
-  \textit{\LIV}
-  \\
-  \Duration{2020}{\Ongoing}  &
-  VMP 979 Epidemiology, Public Health, and Public Policy.
-  \textit{\LIV}
-  \\
-  \Duration{2020}{\Ongoing}  &
-  VMP-991-151 Trade and Globalization (Guest lecturer).
-  \textit{\LIV}
-  \\
-  \Duration{2018}{\Ongoing}  &
-  VMP 991 Special Topics in PHP, Transboundary Disease and Spatial Epidemiology.
-  \textit{\LIV}
-  \\
-  \Duration{2019}{\Ongoing}  &
-  VMP 904 Swine Industry (Guest lecturer).
-  \textit{\LIV}
-  \\
- \Year{2018}  &
-  VMP 945 Epidemiology and Public Health.
-\end{EntriesTable}
-
-\subsection{Graduate-level}
-
-\begin{EntriesTable}
-  \Duration{2021}{\Ongoing}  &
-  CBS 775 (001) Spring 2021 Designing population-based research.
-  \textit{\LIV}
-  \\
-  \Duration{2019}{\Ongoing}  &
-  CBS 650/565 Fundamentals of biomedical sciences.
-  \textit{\LIV}
-  \\
-  \Duration{2018}{\Ongoing}  &
-  CBS 595 Special Topics: Epidemiology I.
-  \textit{\LIV}
-  \\
-  \Duration{2019}{\Ongoing}  &
-  CBS 595 Independent studies in epidemiology.
-  \textit{\LIV}
-  \\
-  \Duration{2019}{\Ongoing}  &
-  VMP 904 Swine Industry (Guest lecturer).
-  \textit{\LIV}
-\end{EntriesTable}
-
-\subsection{Invited presentations}
-
-\begin{EntriesTable}
-%\Year{future}  &
-\Year{2021} &
-  The Generic Mapping Tools for Geodesy
-  \newline
-  \textit{UNAVCO} (online)
-  \GitHub{GenericMappingTools/2021-unavco-course}
-  \\
-\end{EntriesTable}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Supervision and mentoring}
 
 \subsection{Postdoctoral researchers}
@@ -513,7 +443,7 @@ Completed research support
   NC State University
 \end{EntriesTable}
 
-\subsection{P\lowercase{h}D}
+\subsection{P.h.D}
 
 \begin{EntriesTable}
 \Duration{2021}{\Ongoing}  &
@@ -532,7 +462,7 @@ Completed research support
   NC State University-STA
 \end{EntriesTable}
 
-\subsection{Master's}
+\subsection{Master}
 
 \begin{EntriesTable}
 \Duration{2021}{\Ongoing}  &
@@ -540,17 +470,17 @@ Completed research support
   \newline
   NC State University-resident
 \\
-\Duration{2020} &
+\Duration{2020}{2020} &
   Kelsey Mills (Chair)
   \newline
   NC State University-CGA
 \\
-  \Duration{2020} &
+  \Duration{2020}{2020} &
  Heather Paxson  (advisor)
   \newline
   NC State University-CGA
 \\
-\Duration{2020} &
+\Duration{2020}{2020} &
  Patrícia Warzensaky Gottardo Balestrin (Co-chair)
   \newline
   UDESC-Brazil
@@ -561,27 +491,33 @@ Completed research support
 \begin{EntriesTable}
 \Duration{2021}{\Ongoing}  &
   Alyssa Valentine
-  \newline
+    \newline
+  NC State University
   \\
 \Duration{2021}{\Ongoing}  &
   Elizabeth Farren Walsh
-  \newline
+    \newline
+  NC State University
   \\
-\Year{2020}  &
+\Duration{2020}{2020}  &
   Aya Omar
-  \newline
+    \newline
+  NC State University
   \\
 \Duration{2018}{2021}  &
   Stephanie Krasteva
-  \newline
+    \newline
+  NC State University
   \\
 \Duration{2019}{2020}  &
   Jamie Madigan
-  \newline
+    \newline
+  NC State University
   \\
 \Duration{2019}{2020}  &
   Jack Lee Miller
-  \newline
+    \newline
+  NC State University
 \end{EntriesTable}
 
 
@@ -590,481 +526,307 @@ Completed research support
 \begin{EntriesTable}
 \Duration{2020}{\Ongoing}  &
   Allyson Freeman
-  \newline
+    \newline
+  NC State University
   \\
 \Duration{2021}{\Ongoing}  &
-  Madison Joyce
+  Madison Joyce  
   \newline
+  NC State University
   \\
-\Year{2021}  &
+\Duration{2021}{2021}  &
   Alyssa White
-  \newline
+    \newline
+  NC State University
   \\
-\Year{2021}  &
+\Duration{2021}{2021}   &
   Grace Winesett
-  \newline
+    \newline
+  NC State University
   \\
 \Duration{2019}{2020}  &
   Victoria J. Reynolds
-  \newline
+    \newline
+  NC State University
   \\
-\Year{2020}  &
+\Duration{2020}{2020}   &
   Brittany Lee
-  \newline
+    \newline
+  NC State University
   \\
-\Year{2018} &
+\Duration{2018}{2018} &
   Bridget Knapp
-  \newline
+    \newline
+  NC State University
 \end{EntriesTable}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Presentations}
+%%%%%%%%%%%%%
+\subsection{MS and PhD thesis committees}
+
+\begin{EntriesTable}
+\Duration{2018}{2020}  &
+  Dr. Trevor Farthing, CBS – Infectious Diseases Epidemiology
+  \newline
+  NC State University
+\\
+\Duration{2020}{\Ongoing}  &
+  Dr. Cameron Ellington, MS Poultry Epidemiology
+  \newline
+  NC State University
+\end{EntriesTable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Teaching}
+
+\subsection{DVM-level}
+
+\begin{EntriesTable}
+  \Duration{2021}{\Ongoing}  &
+  VMP 971 Food Animal Diagnostics for Disease Diagnosis, Control, and Population Surveillance.
+  \\
+  \Duration{2020}{\Ongoing}  &
+  VMP 979 Epidemiology, Public Health, and Public Policy.
+  \\
+  \Duration{2020}{\Ongoing}  &
+  VMP-991-151 Trade and Globalization (Guest lecturer).
+  \\
+  \Duration{2018}{\Ongoing}  &
+  VMP 991 Special Topics in PHP, Transboundary Disease and Spatial Epidemiology.
+  \\
+  \Duration{2019}{\Ongoing}  &
+  VMP 904 Swine Industry (Guest lecturer).
+  \\
+ \Duration{2018}{2018}  &
+  VMP 945 Epidemiology and Public Health.
+\end{EntriesTable}
+
+\subsection{Graduate-level}
+
+\begin{EntriesTable}
+  \Duration{2021}{\Ongoing}  &
+  CBS 775 (001) Spring 2021 Designing population-based research.
+  \\
+  \Duration{2019}{\Ongoing}  &
+  CBS 650/565 Fundamentals of biomedical sciences.
+  \\
+  \Duration{2018}{\Ongoing}  &
+  CBS 595 Special Topics: Epidemiology I.
+  \\
+  \Duration{2019}{\Ongoing}  &
+  CBS 595 Independent studies in epidemiology.
+  \\
+  \Duration{2019}{\Ongoing}  &
+  VMP 904 Swine Industry (Guest lecturer).
+\end{EntriesTable}
+
+\subsection{Invited presentations}
 
 \begin{EntriesTable}
 \Year{2021}  &
-  \Me.
-  Academia e software livre: Desafios e oportunidades no Brasil e no exterior,
-  \emph{National Observatory's SEG and EAGE Student Chapter},
-  Rio de Janeiro, Brazil.
-  \Invited{}
-  \GitHub{leouieda/2021-07-22-on}
-  \Youtube{r2x-DN6laj8}
-  \\
-  ~ &
-  \Me, \Santiago, \Agustina.
-  Open-science for gravimetry: tools, challenges, and opportunities,
-  \emph{GFZ Helmholtz Centre Potsdam},
-  Germany.
-  \Invited{}
-  \GitHub{leouieda/2021-06-22-gfz}
-  \SlidesDOI{10.6084/m9.figshare.14838477}
-  \Youtube{z-5dvWfB\_SM}
-  \\
-  ~ &
-  \Me, \Santiago, \Agustina.
-  Fatiando a Terra: Open-source tools for geophysics,
-  \emph{Geophysical Society of Houston},
-  Houston, USA.
-  \Invited{}
-  \GitHub{fatiando/2021-gsh}
-  \\
-  ~ &
-  \Me, \Santiago, \Agustina, \LPerozzi, \MWieczorek.
-  Harmonica and Boule: Modern Python tools for geophysical gravimetry,
-  \emph{EGU 2021},
+  \Me\
+  SPS app, database and modeling – endemic and FADs diseases,
+  \emph{National NASAHO ASF Working Group},
   Online.
-  \DOI{10.5194/egusphere-egu21-8291}.
-  \GitHub{fatiando/egu2021}
+  \\
+\Duration{2020}{2021}  &
+  \Me\
+  SPS app, database and modeling,
+  Online.
+  https://machado-lab.github.io/rabapp/
+  \\
+  ~ &
+  \emph{National Pork Board},
+  \\
+  ~ &
+  \emph{Illinois Department of Agriculture},
+  \\
+    ~ &
+  \emph{Texas Department of Agriculture},
+  \\
+      ~ &
+  \emph{Oklahoma Department of Agriculture},
+  \\
+      ~ &
+  \emph{Minnesota Department of Agriculture},
+  \\
+      ~ &
+  \emph{North Carolina Department of Agriculture},
+  \\
+      ~ &
+  \emph{Michigan Department of Agriculture},
+  \\   
+  ~ &
+  \emph{Virginia Department of Agriculture},
+  \\
+  ~ &
+    \emph{South Carolina Department of Agriculture},
+  \\
+  ~ &
+    \emph{Nebraska Department of Agriculture},
+  \\
+  ~ &
+    \emph{South Dakota Department of Agriculture},
+  \\
+  ~ &
+    \emph{Wyoming Department of Agriculture},
+  \\
+  ~ &
+      \emph{Arkansas Department of Agriculture},
+  \\
+  ~ &
+      \emph{Pennsylvania Department of Agriculture}.
+      \\
+\Year{2020}  &
+  \Me\
+  PRRSV outbreaks at the farm-level based on which--biosecurity practices ,
+  \emph{Zoetis Asia},
+  Online.
+  \\
+  \Year{2020}  &
+  \Me\
+  On the ability to predict PRRSV outbreaks at the farm-level based on biosecurity practices,
+  \emph{Keynote at Allen D. Leman Swine Conference, for the Carlos Pijoan SDEC Symposium: Tightening Biosecurity in Swine Farms },
+  Online.
+  \\
+ \Year{2020}  &
+  \Me\
+  Modeling PRRSV: transmission and vaccination strategies,
+  \emph{Boehringer Ingelheim},
+  Online.
+  \\
+ \Year{2020}  &
+  \Me\
+  Introduction to ML with application to disease ecology,
+  \emph{Virginia Tech},
+  Online.
   \\
 \Year{2020}  &
-  \Me.
-  Geophysical research powered by open-source,
-  \emph{Christian Albrechts Universität zu Kiel},
-  Kiel, Germany.
-  \Invited
-  \Slides{www.leouieda.com/2020-07-01-kiel}
-  \\
-  ~ &
-  \Me.
-  Geophysical research powered by open-source,
-  \emph{Departamento de Geofísica, IAG, Universidade de São Paulo},
-  São Paulo, Brazil.
-  \Invited
-  \Youtube{VqI8BX1Yg54}
-  \Slides{www.leouieda.com/2020-06-18-usp}
-  \\
-  ~ &
-  \Me.
-  Geophysical research powered by open-source,
-  \emph{Technische Universität Bergakademie Freiberg},
-  Freiberg, Germany.
-  \Invited
-  \Slides{www.leouieda.com/2020-06-04-freiberg}
-  \\
-  ~ &
-  \Me.
-  Geophysical research powered by open-source,
-  \emph{Geographic Data Science Lab, University of Liverpool},
-  Liverpool, UK.
-  \Invited
-  \Slides{www.leouieda.com/liverpool-gdsl-2020}
-  \\
-  ~ &
-  \Me, \Santiago.
-  Evaluating the accuracy of equivalent-source predictions using
-  cross-validation,
-  \emph{EGU 2020},
-  Vienna, Austria.
-  \DOI{10.5194/egusphere-egu2020-15729}.
-  \SlidesDOI{10.6084/m9.figshare.12245372}
+  \Me\
+  How technology could help predict future PEDv outbreaks,
+  \emph{ANITOX},
+  Raleigh, USA.
   \\
 \Year{2019}  &
-  \Me, \Paul.
-  PyGMT: Accessing the Generic Mapping Tools from Python,
-  \emph{AGU 2019},
-  San Francisco, USA.
-  \PosterDOI{10.6084/m9.figshare.11320280}
+  \Me\
+  Disease epidemiology applied to zoonotic diseases,
+  \emph{ASTMH American Society of Tropical Medicine  Hygiene},
+  Washington DC, USA.
   \\
-  ~ &
-  \Me.
-  Building the foundations for open-source geophysics,
-  \emph{\CVM, \LIV},
-  UK.
-  \SlidesDOI{10.6084/m9.figshare.10255832}
+\Year{2019}  &
+  \Me\
+  Swine biosecurity,
+  \emph{24th  NC Veterinary Conference},
+  Raleigh, USA.
   \\
 \Year{2018}  &
-  \Me, \Eric, \Paul, \David.
-  Coupled Interpolation of Three-component GPS Velocities,
-  \emph{AGU 2018},
+  \Me\
+  Multiscale eco-epidemiologicals,
+  \emph{DARPA PREEMPT},
   Washington DC, USA.
-  \PosterDOI{10.6084/m9.figshare.7440683}
   \\
-  ~ &
-  \Me.
-  Machine Learning Lessons for Geophysics,
-  \emph{Department of Earth Sciences, \UHM},
-  Honolulu, USA.
-  \SlidesDOI{10.6084/m9.figshare.7203344}
+\Year{2018}  &
+  \Me\
+  Investigation of Bayesian spatiotemporal models with a case study,
+  \emph{EpiQ research group},
+  Saint Paul, USA.
   \\
-  ~ &
-  \Me, \Paul.
-  Building an object-oriented Python interface for the Generic Mapping Tools,
-  \emph{Scipy 2018},
-  Austin, USA.
-  \Youtube{6wMtfZXfTRM}
-  \SlidesDOI{10.6084/m9.figshare.6814052}
+\Year{2018}  &
+  \Me\
+  Epidemiology for the swine industry,
+  \emph{NC Swine Company},
+  Raleigh, USA.
   \\
-  ~ &
-  \Me, \David, \Paul.
-  Joint Interpolation of 3-component GPS Velocities Constrained by
-  Elasticity,
-  \emph{AOGS $15^{th}$ Annual Meeting},
-  Honolulu, USA.
-  \SlidesDOI{10.6084/m9.figshare.6387467}
+\Year{2018}  &
+  \Me\
+  Infectious diseases biogeography: the ecological niche modeling approach,
+  \emph{Web lecture to Brazilian audience at the Universidade de São Paulo},
+  Online.
   \\
-  ~ &
-  \Me, \Paul.
-  Integrating the Generic Mapping Tools with the Scientific Python Ecosystem,
-  \emph{AOGS $15^{th}$ Annual Meeting},
-  Honolulu, USA.
-  \PosterDOI{10.6084/m9.figshare.6399944}
+\Year{2018}  &
+  \Me\
+ Spatio-temporal cluster detection for Urban and Rural Leptospirosis in Brazil,
+  \emph{Grupo de trabajo en Leptospirosis SVS MS Brasil y PHE OPS},
+  Washington DC, USA.
+  \\
+\Year{2018}  &
+  \Me\
+  Epidemiological tools and Poultry health,
+  \emph{Poultry day},
+  Raleigh, USA.
   \\
 \Year{2017}  &
-  \Me, \Paul.
-  Nurturing reliable and robust open-source scientific software,
-  \emph{AGU Fall Meeting 2017},
-  New Orleans, USA.
-  \Invited
-  \Youtube{0GO4ZZ5Ry6M}
-  \\
-  ~  &
-  \Me, \Paul.
-  A modern Python interface for the Generic Mapping Tools,
-  \emph{AGU Fall Meeting 2017},
-  New Orleans, USA.
-  \PosterDOI{10.6084/m9.figshare.5662411}
-  \\
-  ~  &
-  \Me, \Paul.
-  Bringing the Generic Mapping Tools to Python,
-  \emph{Scipy 2017},
-  Austin, USA.
-  \Youtube{93M4How7R24}
-  \SlidesDOI{10.6084/m9.figshare.7635833}
-  \\
-  ~ &
-  \Me.
-  Inverting gravity to map the Moho: A new method and the open source
-  software that made it possible,
-  \emph{Department of Geology and Geophysics, \UHM},
-  Honolulu, USA.
-  \SlidesDOI{10.6084/m9.figshare.4779766}
-  \\
-\Year{2016}  &
-  \Me.
-  Fatiando a Terra: construindo uma base para ensino e pesquisa de geofísica,
-  \emph{Observatório Nacional},
-  Rio de Janeiro, Brazil.
-  \Invited
-  \SlidesDOI{10.6084/m9.figshare.1381870}
-  \\
-\Year{2015}  &
-  \Me.
-  Fatiando a Terra: construindo uma base para ensino e pesquisa de geofísica,
-  \emph{Universidade de São Paulo},
-  São Paulo, Brazil.
-  \Invited
-  \SlidesDOI{10.6084/m9.figshare.1381870}
-  \\
-\Year{2014}  &
-  \Me, \Bi, \Val.
-  Using Fatiando a Terra to solve inverse problems in geophysics,
-  \emph{Scipy 2014},
-  Austin, USA.
-  \PosterDOI{10.6084/m9.figshare.1089987}
-  \\
-  ~ &
-  \Me, \Val.
-  Gravity inversion in spherical coordinates using tesseroids,
-  \emph{EGU General Assembly 2014},
-  Vienna, Austria.
-  \SlidesDOI{10.6084/m9.figshare.1155457}
-  \\
-\Year{2013}  &
-  \Me, \Bi, \Val.
-  Modeling the Earth with Fatiando a Terra,
-  \emph{Scipy 2013},
-  Austin, USA.
-  \DOI{10.25080/Majora-8b375195-010}.
-  \Youtube{Ec38h1oB8cc}
-  \Slides{www.leouieda.com/scipy2013/?theme=night}
-  \\
-  ~ &
-  \Me, \Val.
-  3D magnetic inversion by planting anomalous densities,
-  \emph{AGU Meeting of the Americas},
-  Cancun, Mexico.
-  \SlidesDOI{10.6084/m9.figshare.703651}
-  \\
-\Year{2012}  &
-  \Dio, \Me, \YLi, \Val, \BragaVale, \Angeli, \Peres.
-  Iron ore interpretation using gravity-gradient inversions in the Carajás,
-  Brazil,
-  \emph{SEG Annual Meeting 2012},
-  Las Vegas, USA.
-  \DOI{10.1190/segam2012-0525.1}.
-  \SlidesDOI{10.6084/m9.figshare.156865}
-  \\
-  ~ &
-  \Me, \Val.
-  Use of the ``shape-of-anomaly'' data misfit in 3D inversion by planting
-  anomalous densities,
-  \emph{SEG Annual Meeting 2012},
-  Las Vegas, USA.
-  \DOI{10.1190/segam2012-0383.1}.
-  \SlidesDOI{10.6084/m9.figshare.156864}
-  \\
-  ~ &
-  \Me, \Val.
-  Rapid 3D inversion of gravity and gravity gradient data to test geologic
-  hypotheses,
-  \emph{International Symposium on Gravity, Geoid and Height Systems},
-  Venice, Italy.
-  \SlidesDOI{10.6084/m9.figshare.156859}
-  \\
-\Year{2011}  &
-  \Me, \Val.
-  Robust 3D gravity gradient inversion by planting anomalous densities,
-  \emph{SEG Annual Meeting 2011},
-  San Antonio, USA.
-  \DOI{10.1190/1.3628201}.
-  \SlidesDOI{10.6084/m9.figshare.156863}
-  \\
-  ~ &
-  \Me, \Val.
-  3D gravity inversion by planting anomalous densities,
-  \emph{Internation Congress of the Brazilian Geophysical Society},
-  Rio de Janeiro, Brazil.
-  \DOI{10.1190/sbgf2011-179}.
-  \SlidesDOI{10.6084/m9.figshare.156861}
-  \\
-  ~ &
-  \Me, \Everton, \Carla, \Eder.
-  Optimal forward calculation method of the Marussi tensor due to a geologic
-  structure at GOCE height,
-  \emph{4th International GOCE User Workshop},
-  Munich, Germany.
-  \PosterDOI{10.6084/m9.figshare.92624}
-  \\
-  ~ &
-  \Me, \Val.
-  3D gravity gradient inversion by planting density anomalies,
-  \emph{73th EAGE Conference and Exhibition incorporating SPE EUROPEC},
-  Vienna, Austria.
-  \DOI{10.3997/2214-4609.20149567}.
-  \PosterDOI{10.6084/m9.figshare.91511}
-  \\
-\Year{2010}  &
-  \Me, \Naomi, \Carla.
-  Computation of the gravity gradient tensor due to topographic masses using
-  tesseroids,
-  \emph{AGU Meeting of the Americas},
-  Foz do Iguaçu, Brazil.
-  \SlidesDOI{10.6084/m9.figshare.156858}
-  \\
-\Year{2008}  &
-  \Me, \Naomi.
-  Utilização de tesseróides na modelagem de dados de gradiometria
-  gravimétrica,
-  \emph{XIII Simpósio de Iniciação Científica do IAG-USP},
-  São Paulo, Brazil.
-  \PosterDOI{10.6084/m9.figshare.4779760}
-  \\
-\Year{2006}  &
-  \Me, \Manoel.
-  Paleomagnetismo e mineralogia magnética dos diques cambrianos de Maravilhas
-  e Prata (PB),
-  \emph{XI Simpósio de Iniciação Científica do IAG/USP},
-  São Paulo, Brazil.
-  \PosterDOI{10.6084/m9.figshare.4779769}
+  \Me\
+  Mapping hotspot of infectious diseases in the animal-human-ecosystem interface,
+  \emph{ENDESA Encontro Nacional de Defesa Sanitária Animal},
+  Manaus, Brazil.
 \end{EntriesTable}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Outreach}
 
-I maintain a blog about my research, geoscience, and programming at
-\href{https://www.leouieda.com/blog}{leouieda.com/blog}
-\\
+I maintain the Rapid Access Biosecurity (RAB) app standardizes Secure Pork Supply (SPS) biosecurity plans and creates maps to visualize the biosecurity infrastructure of individual farms across multiple states
+- Current states utilizing RABapp: In total 10 State Animal Health Official (SAHO) are currently using the RABapp or at final arrangements/agreements to utilize the
+\href{https://machado-lab.github.io/rabapp/}{RABapp}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Grant review activities}
 
 \begin{EntriesTable}
-\Year{2018}  &
-  Interviewed by the geoscience podcast \textit{Don't Panic Geocast}, episode 166
-  \textit{``You are headed to a warm and sunny place''}:
-  \href{http://www.dontpanicgeocast.com/?p=638}{dontpanicgeocast.com/?p=638}
-  \\
-\Year{2017}  &
-  Volunteer for the \textit{Hour of Code} at Salt Lake Elementary School, Honolulu,
-  USA.
-  \\
-\Year{2016}  &
-  Interviewed by the geoscience podcast \textit{Undersampled Radio}, episode
-  \textit{``Open Sourcery''}:
-  \href{https://undersampledrad.io/home/2016/7/open-sourcery}{undersampledrad.io/home/2016/7/open-sourcery}
+\Year{2020}  &
+USDA-NIFA-Critical Agricultural Research and Extension (CARE) (A1701)
+ \\
+    \Year{2020}  &
+The Dutch Research Council (NWO) funds
+ \\
+ \Year{2019}  &
+ Foundation for Food and  Agriculture Research
+ \\
+  \Year{2019}  &
+MRC: Medical Research Council
 \end{EntriesTable}
 
-Geophysical tutorials for the SEG publication \textit{The Leading Edge}:
-\\
-
-\begin{EntriesTable}
-\Year{2017}  &
-  \OA
-  \Me.
-  Step-by-step NMO correction,
-  \emph{The Leading Edge},
-  \DOI{10.1190/tle36020179.1}.
-  \GitHub{pinga-lab/nmo-tutorial}
-  \\
-\Year{2014}  &
-  \OA
-  \Me, \Bi, \Val.
-  Geophysical tutorial: Euler deconvolution of potential-field data,
-  \emph{The Leading Edge},
-  \DOI{10.1190/tle33040448.1}.
-  \GitHub{pinga-lab/paper-tle-euler-tutorial}
-\end{EntriesTable}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Academic Service \& Affiliations}
 
-\subsection{Editor}
-
 \begin{EntriesTable}
-  \Duration{2019}{\Ongoing} & Topic editor for the \textit{Journal of Open Source Software}
+\Duration{2020}{\Ongoing}  &
+United States Animal Health Association Order Confirmation – USAHA, co-chair of  AAVLD/USAHA Subcommittee on Information Standards
+ \\
+ \Duration{2020}{\Ongoing}  &
+United States Animal Health Association Order Confirmation – USAHA, board member
+ \\
+ \Duration{2019}{\Ongoing}  &
+American Association of Swine Veterinarians (AASV)
+ \\
+ \Duration{2018}{\Ongoing}  &
+ Ecological Society of America
+ \\
+  \Duration{2018}{\Ongoing}  &
+  NC Veterinary Medical Association
 \end{EntriesTable}
 
-\subsection{Community service}
-
-\begin{EntriesTable}
-  \Duration{2019}{\Ongoing} & EarthArXiv Advisory Council
-\end{EntriesTable}
-
-\subsection{Committees}
-
-\begin{EntriesTable}
-\Duration{2020}{\Ongoing} &
-  Department committee for web presence (website, social media, etc),
-  \LIV.
-  \\
-\Duration{2020}{\Ongoing} &
-  Earth Sciences representative at the Early Career Academic (ECA) forum,
-  \LIV.
-  \\
-\Year{2015} &
-  Chairman of the Election Committee for the deans of the University and the School of
-  Geology, \UERJ.
-  \\
-\Duration{2015}{2017} &
-  Faculty Advisor for the Student Chapter of the Socienty of Exploration Geophysicists
-  (SEG) at the \UERJ.
-\end{EntriesTable}
-
-\subsection{Conference Convener}
-
-\begin{EntriesTable}
-%\Year{future} &
-\Year{2021} &
-  Session: EOS5.3 - The evolving open-science landscape in geosciences: open
-  data, software, publications and community initiatives.
-  \newline
-  Nijzink, RC,
-  Drost, N,
-  \JFarquharson,
-  \AKushnir,
-  Pianosi, F,
-  Schymanski, S,
-  \Me,
-  \FWadsworth.
-  \newline
-  \emph{EGU 2021}, Vienna, Austria.
-  \\
-  ~ &
-  Session: G4.3 - Acquisition and processing of gravity and magnetic field data
-  and their integrative interpretation.
-  \newline
-  \JEbbing, \Carla, \AGuy, \MKaban, \Me.
-  \newline
-  \emph{EGU 2021}, Vienna, Austria.
-  \\
-\Year{2019} &
-  Townhall: Update and Future Directions of the Open-Source Software Initiative.
-  \newline
-  \Me, \Lindsey, \Lion, \Rene, \Bane.
-  \newline
-  \emph{AGU 2019}, San Francisco, USA.
-  \\
-  ~ &
-  Session: NS21A - A Tour of Open-Source Software Packages for the Geosciences.
-  \newline
-  \Lindsey, \Rene, \Me, \Jens.
-  \newline
-  \emph{AGU 2019}, San Francisco, USA.
-  \\
-\Year{2018} &
-  Townhall: The role of an open-source software initiative within the AGU.
-  \newline
-  \Lindsey, \Lion, \Me.
-  \newline
-  \emph{AGU 2018}, Washington DC, USA.
-\end{EntriesTable}
-
-\subsection{Reviewer}
+%%%%%%%%%%%%%
+\subsection{Editorial activities}
 
 \begin{itemize}
-  \item Geophysical Journal International
-  \item Journal of Geodesy
-  \item Pure and Applied Geophysics
-  \item Journal of Applied Geophysics
-  \item Geophysical Prospecting
-  \item Geophysics
-  \item Central European Journal of Geosciences
-  \item Computers \& Geosciences
-  \item Journal of Open Source Software
+  \item Pathology, Research and Practice
+  \item Comparative Clinical Pathology
+  \item Microbial Pathogenesis 
+  \item Parasitology (Cambridge) 
+  \item Scientific Reports 
+  \item Frontiers in Microbiology 
+  \item The American Journal of Tropical Medicine and Hygiene
+  \item Research in Veterinary Science
+  \item International journal of experimental pathology 
+  \item Preventive Veterinary Medicine 
+  \item Journal of Wildlife Diseases  
+  \item Oxford Research Encyclopedia of Global Public Health
+  \item PLOS Neglected Tropical Diseases
+  \item Zoonosis 
+  \item Nature Communications
+  \item Zoonoses and Public Health
+  \item Epidemics
 \end{itemize}
-
-\subsection{Affiliations}
-
-\begin{EntriesTable}
-  \Duration{2020}{\Ongoing} & Royal Astronomical Society
-  \\
-  \Duration{2014}{\Ongoing} & \href{https://softwareunderground.org}{Software Underground}
-  \\
-  \Duration{2014}{\Ongoing} & European Geosciences Union
-  \\
-  \Duration{2010}{\Ongoing} & American Geophysical Union
-  \\
-  \Duration{2011}{2019} & Society of Exploration Geophysicists
-\end{EntriesTable}
 
 \end{document}
